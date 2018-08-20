@@ -2,6 +2,11 @@ import React from "react";
 import { render } from "react-dom";
 import MyTable from "..";
 
+// Keep in mind that when using real browser events
+// when testing React components...
+// 1. The events have to bubble
+// 2. The DOM nodes have to be attached to the `document.body`
+
 const NODE_TYPE = Object.freeze({
   ELEMENT_NODE: 1
 });
@@ -24,10 +29,6 @@ describe("MyTable", () => {
     // Arrange
     const component = <MyTable />;
     const mountNode = document.createElement("div");
-    // Usually the following is not neccessary, but `react-dnd` adds event
-    // listeners to the `window` object. If we don't attach our `mountNode` to
-    // the body of the document then their listeners won't get called.
-    // https://github.com/react-dnd/react-dnd/issues/556
     document.body.appendChild(mountNode);
 
     const getTableCells = () =>
