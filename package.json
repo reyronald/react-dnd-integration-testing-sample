@@ -4,6 +4,10 @@
   "description": "",
   "keywords": [],
   "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reyronald/react-dnd-integration-testing-sample.git"
+  },
   "dependencies": {
     "antd": "3.8.0",
     "emotion": "9.2.6",
